@@ -1,0 +1,276 @@
+[manager]
+cwd = { fg = "#21c7a8" }
+
+# Hovered
+hovered         = { reversed = true }
+preview_hovered = { underline = true }
+
+# Find
+find_keyword  = { fg = "#e3d18a", bold = true, italic = true, underline = true }
+find_position = { fg = "#ff5874", bg = "reset", bold = true, italic = true }
+
+# Marker
+marker_copied   = { fg = "#21c7a8", bg = "#21c7a8" }
+marker_cut      = { fg = "#ff5874", bg = "#ff5874" }
+marker_marked   = { fg = "#82aaff", bg = "#82aaff" }
+marker_selected = { fg = "#e3d18a", bg = "#e3d18a" }
+
+# Tab
+tab_active   = { reversed = true }
+tab_inactive = {}
+tab_width    = 1
+
+# Count
+count_copied   = { fg = "#1d3b53", bg = "#21c7a8" }
+count_cut      = { fg = "#1d3b53", bg = "#ff5874" }
+count_selected = { fg = "#1d3b53", bg = "#e3d18a" }
+
+# Border
+border_symbol = "│"
+border_style  = { fg = "#1d3b53" }
+
+
+# : Status {{{
+
+[status]
+separator_open  = ""
+separator_close = ""
+separator_style = { fg = "#1d3b53", bg = "#1d3b53" }
+
+# Mode
+mode_normal = { fg = "#1d3b53", bg = "#82aaff", bold = true }
+mode_select = { fg = "#1d3b53", bg = "#e3d18a", bold = true }
+mode_unset  = { fg = "#1d3b53", bg = "#ff5874", bold = true }
+
+# Progress
+progress_label  = { fg = "#d6deeb", bold = true }
+progress_normal = { fg = "#82aaff", bg = "#1d3b53" }
+progress_error  = { fg = "#fc514e", bg = "#1d3b53" }
+
+# Permissions
+permissions_t = { fg = "#a1cd5e" }
+permissions_r = { fg = "#ecc48d" }
+permissions_w = { fg = "#fc514e" }
+permissions_x = { fg = "#7fdbca" }
+permissions_s = { fg = "#7c8f8f" }
+
+[pick]
+border   = { fg = "#1d3b53" }
+active   = { fg = "#c792ea", bold = true }
+inactive = {}
+
+
+[input]
+border   = { fg = "#1d3b53" }
+title    = {}
+value    = {}
+selected = { reversed = true }
+
+
+[confirm]
+border     = { fg = "#1d3b53" }
+title      = { fg = "#c792ea" }
+content    = {}
+list       = {}
+btn_yes    = { reversed = true }
+btn_no     = {}
+btn_labels = [ " [Y]es ", " (N)o " ]
+
+
+[completion]
+border   = { fg = "#1d3b53" }
+active   = { reversed = true }
+inactive = {}
+
+# Icons
+icon_file    = ""
+icon_folder  = ""
+icon_command = ""
+
+[tasks]
+border  = { fg = "#1d3b53" }
+title   = {}
+hovered = { fg = "#c792ea", underline = true }
+
+
+[which]
+cols            = 3
+mask            = { bg = "#1d3b53" }
+cand            = { fg = "#7fdbca" }
+rest            = { fg = "#d6deeb" }
+desc            = { fg = "#c792ea" }
+separator       = "  "
+separator_style = { fg = "#7c8f8f" }
+
+
+[help]
+on      = { fg = "#7fdbca" }
+run     = { fg = "#c792ea" }
+desc    = {}
+hovered = { reversed = true, bold = true }
+footer  = { fg = "#1d3b53", bg = "#bdc1c6" }
+
+
+[notify]
+title_info  = { fg = "#a1cd5e" }
+title_warn  = { fg = "#e3d18a" }
+title_error = { fg = "#fc514e" }
+
+# Icons
+icon_info  = ""
+icon_warn  = ""
+icon_error = ""
+
+ 
+[filetype]
+
+rules = [
+	# Images
+	{ mime = "image/*", fg = "#e3d18a" },
+
+	# Media
+	{ mime = "{audio,video}/*", fg = "#c792ea" },
+
+	# Archives
+	{ mime = "application/{,g}zip", fg = "#ff5874" },
+	{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#ff5874" },
+
+	# Documents
+	{ mime = "application/{pdf,doc,rtf,vnd.*}", fg = "#7fdbca" },
+
+	# Empty files
+	{ mime = "inode/x-empty", fg = "#fc514e" },
+
+	# Special files
+	{ name = "*", is = "orphan", bg = "#ff5874" },
+	{ name = "*", is = "exec"  , fg = "green" },
+
+	# Dummy files
+	{ name = "*", is = "dummy", bg = "#ff5874" },
+	{ name = "*/", is = "dummy", bg = "#ff5874" },
+
+	# Fallback
+	{ name = "*", fg = "#d6deeb" },
+	{ name = "*/", fg = "#82aaff" }
+]
+
+
+[icon]
+
+globs = [
+  { name = "*.txt", text = "📃"},
+  { name = "*.mom", text = "📃"},
+  { name = "*.me", text = "📃"},
+  { name = "*.ms", text = "📃"},
+  { name = "*.png", text = "🖼"},
+  { name = "*.webp", text = "🖼"},
+  { name = "*.ico", text = "🖼"},
+  { name = "*.jpg", text = "📸"},
+  { name = "*.jpe", text = "📸"},
+  { name = "*.jpeg", text = "📸"},
+  { name = "*.gif", text = "🖼"},
+  { name = "*.svg", text = "🗺"},
+  { name = "*.tif", text = "🖼"},
+  { name = "*.tiff", text = "🖼"},
+  { name = "*.xcf", text = "🖌"},
+  { name = "*.html", text = "🌎"},
+  { name = "*.xml", text = "📰"},
+  { name = "*.gpg", text = "🔒"},
+  { name = "*.css", text = "🎨"},
+  { name = "*.pdf", text = "📙"},
+  { name = "*.djvu", text = "📚"},
+  { name = "*.epub", text = "📚"},
+  { name = "*.csv", text = "📓"},
+  { name = "*.xlsx", text = "📓"},
+  { name = "*.doc", text = "📘"},
+  { name = "*.docx", text = "📘"},
+  { name = "*.pptx", text = "📒"},
+  { name = "*.tex", text = "📜"},
+  { name = "*.md", text = "📗"},
+  { name = "*.r", text = "📊"},
+  { name = "*.R", text = "📊"},
+  { name = "*.rmd", text = "📊"},
+  { name = "*.Rmd", text = "📊"},
+  { name = "*.m", text = "📊"},
+  { name = "*.mp3", text = "📻"},
+  { name = "*.opus", text = "📻"},
+  { name = "*.ogg", text = "📻"},
+  { name = "*.m4a", text = "📻"},
+  { name = "*.aac", text = "📻"},
+  { name = "*.flac", text = "🎼"},
+  { name = "*.wav", text = "🎼"},
+  { name = "*.mkv", text = "🎥"},
+  { name = "*.mp4", text = "🎥"},
+  { name = "*.webm", text = "🎥"},
+  { name = "*.mpeg", text = "🎥"},
+  { name = "*.avi", text = "🎥"},
+  { name = "*.mov", text = "🎥"},
+  { name = "*.mpg", text = "🎥"},
+  { name = "*.wmv", text = "🎥"},
+  { name = "*.m4b", text = "🎥"},
+  { name = "*.flv", text = "🎥"},
+  { name = "*.zip", text = "📦"},
+  { name = "*.rar", text = "📦"},
+  { name = "*.7z", text = "📦"},
+  { name = "*.tar.gz", text = "📦"},
+  { name = "*.z64", text = "🎮"},
+  { name = "*.v64", text = "🎮"},
+  { name = "*.n64", text = "🎮"},
+  { name = "*.gba", text = "🎮"},
+  { name = "*.nes", text = "🎮"},
+  { name = "*.gdi", text = "🎮"},
+  { name = "*.1", text = "ℹ"},
+  { name = "*.nfo", text = "ℹ"},
+  { name = "*.info", text = "ℹ"},
+  { name = "*.json", text = "🌵"},
+  { name = "*.log", text = "📙"},
+  { name = "*.iso", text = "📀"},
+  { name = "*.img", text = "📀"},
+  { name = "*.bib", text = "🎓"},
+  { name = "*.ged", text = "👪"},
+  { name = "*.part", text = "💔"},
+  { name = "*.torrent", text = "🔽"},
+  { name = "*.jar", text = "♨"},
+  { name = "*.java", text = "♨"},
+  { name = "*.py", text = "🍀"},
+  { name = "*.lua", text = "🌸"},
+  { name = "*.h", text = "🌲"},
+  # { name = "*.c", text = "☘"️},
+  # { name = "*.cpp", text = "☘"️},
+  { name = "*.hpp", text = "🌳"},
+  # { name = "*.zsh", text = "⚙"️},
+  { name = "*.pt", text = "🪵"},
+  { name = "*.pth", text = "🪵"},
+  { name = "*.onnx", text = "🪨"},
+  { name = "*.engine", text = "🏠"},
+  { name = "*.om", text = "🏠"},
+  { name = "*.bmodel", text = "🏠"},
+  { name = "*.bin", text = "🏠"},
+  { name = "*.param", text = "ℹ"},
+  { name = "*.encrypted", text = "🍊"},
+]
+
+dirs  = []
+exts = []
+
+conds = [
+	# Special files
+	# { if = "orphan", text = "" },
+	# { if = "link", text = "" },
+	# { if = "block", text = "" },
+	# { if = "char", text = "" },
+	# { if = "fifo", text = "" },
+	# { if = "sock", text = "" },
+	# { if = "sticky", text = "" },
+	# { if = "dummy", text = "" },
+
+	{ if = "link", text = "⛓" },
+
+	{ if = "orphan", text = "❌" },
+
+  { if = "hidden & dir", text = "👻" },
+	{ if = "dir", text = "📁" },
+	{ if = "!dir & exec", text = "🎯" },
+	{ if = "!(dir | link)", text = "📃" },
+
+  ]
