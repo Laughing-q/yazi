@@ -183,8 +183,8 @@ keymap = [
 	{ on = "<C-c>", run = "close", desc = "Close task manager" },
 	{ on = "w",     run = "close", desc = "Close task manager" },
 
-	{ on = "k", run = "arrow -1", desc = "Move cursor up" },
-	{ on = "j", run = "arrow 1",  desc = "Move cursor down" },
+	{ on = "i", run = "arrow -1", desc = "Move cursor up" },
+	{ on = "k", run = "arrow 1",  desc = "Move cursor down" },
 
 	{ on = "<Up>",   run = "arrow -1", desc = "Move cursor up" },
 	{ on = "<Down>", run = "arrow 1",  desc = "Move cursor down" },
@@ -205,9 +205,9 @@ keymap = [
 	{ on = "<C-c>", run = "close", desc = "Close the spot" },
 	{ on = "<Tab>", run = "close", desc = "Close the spot" },
 
-	{ on = "k", run = "arrow -1", desc = "Move cursor up" },
-	{ on = "j", run = "arrow 1",  desc = "Move cursor down" },
-	{ on = "h", run = "swipe -1", desc = "Swipe to the next file" },
+	{ on = "i", run = "arrow -1", desc = "Move cursor up" },
+	{ on = "k", run = "arrow 1",  desc = "Move cursor down" },
+	{ on = "j", run = "swipe -1", desc = "Swipe to the next file" },
 	{ on = "l", run = "swipe 1",  desc = "Swipe to the previous file" },
 
 	{ on = "<Up>",    run = "arrow -1", desc = "Move cursor up" },
@@ -231,8 +231,8 @@ keymap = [
 	{ on = "<C-c>",   run = "close",          desc = "Cancel pick" },
 	{ on = "<Enter>", run = "close --submit", desc = "Submit the pick" },
 
-	{ on = "k", run = "arrow -1", desc = "Move cursor up" },
-	{ on = "j", run = "arrow 1",  desc = "Move cursor down" },
+	{ on = "i", run = "arrow -1", desc = "Move cursor up" },
+	{ on = "k", run = "arrow 1",  desc = "Move cursor down" },
 
 	{ on = "<Up>",   run = "arrow -1", desc = "Move cursor up" },
 	{ on = "<Down>", run = "arrow 1",  desc = "Move cursor down" },
@@ -323,8 +323,8 @@ keymap = [
 	{ on = "n", run = "close",          desc = "Cancel the confirm" },
 	{ on = "y", run = "close --submit", desc = "Submit the confirm" },
 
-	{ on = "k", run = "arrow -1", desc = "Move cursor up" },
-	{ on = "j", run = "arrow 1",  desc = "Move cursor down" },
+	{ on = "i", run = "arrow -1", desc = "Move cursor up" },
+	{ on = "k", run = "arrow 1",  desc = "Move cursor down" },
 
 	{ on = "<Up>",   run = "arrow -1", desc = "Move cursor up" },
 	{ on = "<Down>", run = "arrow 1",  desc = "Move cursor down" },
@@ -341,8 +341,8 @@ keymap = [
 	{ on = "<Tab>",   run = "close --submit",                             desc = "Submit the completion" },
 	{ on = "<Enter>", run = [ "close --submit", "close_input --submit" ], desc = "Submit the completion and input" },
 
-	{ on = "<A-k>", run = "arrow -1", desc = "Move cursor up" },
-	{ on = "<A-j>", run = "arrow 1",  desc = "Move cursor down" },
+	{ on = "<A-i>", run = "arrow -1", desc = "Move cursor up" },
+	{ on = "<A-k>", run = "arrow 1",  desc = "Move cursor down" },
 
 	{ on = "<Up>",   run = "arrow -1", desc = "Move cursor up" },
 	{ on = "<Down>", run = "arrow 1",  desc = "Move cursor down" },
@@ -363,8 +363,8 @@ keymap = [
 	{ on = "<C-c>", run = "close",  desc = "Hide the help" },
 
 	# Navigation
-	{ on = "k", run = "arrow -1", desc = "Move cursor up" },
-	{ on = "j", run = "arrow 1",  desc = "Move cursor down" },
+	{ on = "i", run = "arrow -1", desc = "Move cursor up" },
+	{ on = "k", run = "arrow 1",  desc = "Move cursor down" },
 
 	{ on = "<Up>",   run = "arrow -1", desc = "Move cursor up" },
 	{ on = "<Down>", run = "arrow 1",  desc = "Move cursor down" },
