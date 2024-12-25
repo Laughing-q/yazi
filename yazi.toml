@@ -51,6 +51,9 @@ play = [
 sxiv = [
 	{ run = 'rotdir "$@" | grep -i "\.\(png\|jpg\|jpeg\|gif\|webp\|tif\|ico\)\(_large\)*$" | sxiv -aio', orphan = true, desc = "sxiv", for = "unix" },
 ]
+zathura = [
+	{ run = 'zathura "$@"', orphan = true, desc = "zathura", for = "unix" },
+]
 
 [open]
 rules = [
@@ -67,6 +70,8 @@ rules = [
 	# JSON
 	{ mime = "application/{json,ndjson}", use = [ "edit", "reveal" ] },
 	{ mime = "*/javascript", use = [ "edit", "reveal" ] },
+  # pdf
+	{ mime = "application/pdf", use = [ "zathura", "reveal" ] },
 	# Empty file
 	{ mime = "inode/empty", use = [ "edit", "reveal" ] },
 	# Fallback
