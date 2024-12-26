@@ -148,6 +148,7 @@ previewers = [
 	{ name = "*", run = "file" },
 ]
 
+# TODO: update the position of the following sections
 [input]
 cursor_blink = false
 
