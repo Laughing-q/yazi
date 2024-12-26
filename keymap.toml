@@ -24,8 +24,8 @@ keymap = [
 
 	{ on = "<C-u>", run = "arrow -50%",  desc = "Move cursor up half page" },
 	{ on = "<C-d>", run = "arrow 50%",   desc = "Move cursor down half page" },
-	{ on = "<C-b>", run = "arrow -100%", desc = "Move cursor up one page" },
-	{ on = "<C-f>", run = "arrow 100%",  desc = "Move cursor down one page" },
+	# { on = "<C-b>", run = "arrow -100%", desc = "Move cursor up one page" },
+	# { on = "<C-f>", run = "arrow 100%",  desc = "Move cursor down one page" },
 
 	{ on = "<S-PageUp>",   run = "arrow -50%",  desc = "Move cursor up half page" },
 	{ on = "<S-PageDown>", run = "arrow 50%",   desc = "Move cursor down half page" },
@@ -47,8 +47,8 @@ keymap = [
 
 	# Toggle
 	{ on = "<Space>", run = [ "toggle", "arrow 1" ], desc = "Toggle the current selection state" },
-	{ on = "<C-a>",   run = "toggle_all --state=on", desc = "Select all files" },
-	{ on = "<C-r>",   run = "toggle_all",            desc = "Invert selection of all files" },
+	# { on = "<C-a>",   run = "toggle_all --state=on", desc = "Select all files" },
+	{ on = "<C-a>",   run = "toggle_all",            desc = "Invert selection of all files" },
 
 	# Visual mode
 	{ on = "v", run = "visual_mode",         desc = "Enter visual mode (selection mode)" },
@@ -63,18 +63,18 @@ keymap = [
 
 	# Operation
   # TODO: smarter oper
-	{ on = "o",         run = "open",                        desc = "Open selected files" },
-	{ on = "O",         run = "open --interactive",          desc = "Open selected files interactively" },
-	{ on = "<Enter>",   run = "open",                        desc = "Open selected files" },
-	{ on = "<S-Enter>", run = "open --interactive",          desc = "Open selected files interactively" },
+	# { on = "o",         run = "open",                        desc = "Open selected files" },
+	{ on = "r",         run = "open --interactive",          desc = "Open selected files interactively" },
+	# { on = "<Enter>",   run = "open",                        desc = "Open selected files" },
+	# { on = "<S-Enter>", run = "open --interactive",          desc = "Open selected files interactively" },
 
 	{ on = ["y", "y"],  run = "yank",                        desc = "Yank selected files (copy)" },
 	{ on = "d",         run = "yank --cut",                  desc = "Yank selected files (cut)" },
 	{ on = "p",         run = "paste",                       desc = "Paste yanked files" },
 	{ on = "P",         run = "paste --force",               desc = "Paste yanked files (overwrite if the destination exists)" },
-	{ on = "-",         run = "link",                        desc = "Symlink the absolute path of yanked files" },
-	{ on = "_",         run = "link --relative",             desc = "Symlink the relative path of yanked files" },
-	{ on = "<C-->",     run = "hardlink",                    desc = "Hardlink yanked files" },
+	# { on = "-",         run = "link",                        desc = "Symlink the absolute path of yanked files" },
+	# { on = "_",         run = "link --relative",             desc = "Symlink the relative path of yanked files" },
+	# { on = "<C-->",     run = "hardlink",                    desc = "Hardlink yanked files" },
   # TODO: try to reuse Esc for unyank
 	{ on = "Y",         run = "unyank",                      desc = "Cancel the yank status" },
 # { on = "<Esc>",         run = "unyank",                      desc = "Cancel the yank status" },
@@ -82,17 +82,21 @@ keymap = [
 
 	# { on = "d",         run = "remove",                      desc = "Trash selected files" },
 	{ on = "D",         run = "remove --permanently",        desc = "Permanently delete selected files" },
-	{ on = "a",         run = "create",                      desc = "Create a file (ends with / for directories)" },
-	{ on = "r",         run = "rename --cursor=before_ext",  desc = "Rename selected file(s)" },
+	{ on = "T",         run = "create",                      desc = "Create a file (ends with / for directories)" },
+	{ on = "a",         run = "rename --cursor=before_ext",  desc = "Rename selected file(s)" },
+	{ on = "h",         run = "rename --cursor=start",  desc = "Rename selected file(s)" },
+	{ on = "c",         run = "rename --empty=stem --cursor=start",  desc = "Rename selected file(s)" },
+	{ on = "C",         run = "rename --empty=all",  desc = "Rename selected file(s)" },
+
 	{ on = ";",         run = "shell --interactive",         desc = "Run a shell command" },
 	{ on = ":",         run = "shell --block --interactive", desc = "Run a shell command (block until finishes)" },
-	# { on = ".",         run = "hidden toggle",               desc = "Toggle the visibility of hidden files" },
 	{ on = "<Backspace>",         run = "hidden toggle",               desc = "Toggle the visibility of hidden files" },
+
 	{ on = "s",         run = "search --via=fd",             desc = "Search files by name via fd" },
 	{ on = "S",         run = "search --via=rg",             desc = "Search files by content via ripgrep" },
 	{ on = "<C-s>",     run = "escape --search",             desc = "Cancel the ongoing search" },
 	{ on = "z",         run = "plugin zoxide",               desc = "Jump to a directory via zoxide" },
-	{ on = "Z",         run = "plugin fzf",                  desc = "Jump to a file/directory via fzf" },
+	{ on = "<C-f>",     run = "plugin fzf",                  desc = "Jump to a file/directory via fzf" },
 
 	# Linemode
 	{ on = [ "m", "s" ], run = "linemode size",        desc = "Linemode: size" },
