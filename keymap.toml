@@ -205,7 +205,7 @@ keymap = [
 
 keymap = [
 	{ on = "<Esc>", run = "close", desc = "Close the spot" },
-	{ on = "<C-[>", run = "close", desc = "Close the spot" },
+	{ on = "q",     run = "close", desc = "Close the spot" },
 	{ on = "<C-c>", run = "close", desc = "Close the spot" },
 	{ on = "<Tab>", run = "close", desc = "Close the spot" },
 
@@ -220,7 +220,7 @@ keymap = [
 	{ on = "<Right>", run = "swipe 1",  desc = "Swipe to the previous file" },
 
 	# Copy
-	{ on = [ "c", "c" ], run = "copy cell", desc = "Copy selected cell" },
+	{ on = [ "y", "y" ], run = "copy cell", desc = "Copy selected cell" },
 
 	# Help
 	{ on = "~",    run = "help", desc = "Open help" },
@@ -255,15 +255,15 @@ keymap = [
 	{ on = "<C-[>",   run = "escape",         desc = "Go back the normal mode, or cancel input" },
 
 	# Mode
-	{ on = "i", run = "insert",                              desc = "Enter insert mode" },
+	{ on = "h", run = "insert",                              desc = "Enter insert mode" },
 	{ on = "a", run = "insert --append",                     desc = "Enter append mode" },
-	{ on = "I", run = [ "move -999", "insert" ],             desc = "Move to the BOL, and enter insert mode" },
+	{ on = "H", run = [ "move -999", "insert" ],             desc = "Move to the BOL, and enter insert mode" },
 	{ on = "A", run = [ "move 999", "insert --append" ],     desc = "Move to the EOL, and enter append mode" },
 	{ on = "v", run = "visual",                              desc = "Enter visual mode" },
 	{ on = "V", run = [ "move -999", "visual", "move 999" ], desc = "Enter visual mode and select all" },
 
 	# Character-wise movement
-	{ on = "h",       run = "move -1", desc = "Move back a character" },
+	{ on = "j",       run = "move -1", desc = "Move back a character" },
 	{ on = "l",       run = "move 1",  desc = "Move forward a character" },
 	{ on = "<Left>",  run = "move -1", desc = "Move back a character" },
 	{ on = "<Right>", run = "move 1",  desc = "Move forward a character" },
