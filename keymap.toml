@@ -179,6 +179,10 @@ keymap = [
 	# Help
 	{ on = "~",    run = "help", desc = "Open help" },
 	{ on = "<F1>", run = "help", desc = "Open help" },
+
+  # custom shell command
+	{ on = "e", run = '''shell --block 'ext "$0"'''', desc = "Extract zip files" },
+	{ on = "X", run = 'shell "$SHELL" --block', desc = "Drop to the shell" },
 ]
 
 [tasks]
