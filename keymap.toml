@@ -191,7 +191,7 @@ keymap = [
 	{ on = "<Esc>", run = "close", desc = "Close task manager" },
 	{ on = "<C-[>", run = "close", desc = "Close task manager" },
 	{ on = "<C-c>", run = "close", desc = "Close task manager" },
-	{ on = "w",     run = "close", desc = "Close task manager" },
+	{ on = "q",     run = "close", desc = "Close task manager" },
 
 	{ on = "i", run = "arrow -1", desc = "Move cursor up" },
 	{ on = "k", run = "arrow 1",  desc = "Move cursor down" },
