@@ -47,8 +47,8 @@ keymap = [
 
 	# Toggle
 	{ on = "<Space>", run = [ "toggle", "arrow 1" ], desc = "Toggle the current selection state" },
-	# { on = "<C-a>",   run = "toggle_all --state=on", desc = "Select all files" },
-	{ on = "<C-a>",   run = "toggle_all",            desc = "Invert selection of all files" },
+	{ on = "<C-a>",   run = "toggle_all --state=on", desc = "Select all files" },
+	{ on = "v",   run = "toggle_all",            desc = "Invert selection of all files" },
 
 	# Visual mode
 	{ on = "v", run = "visual_mode",         desc = "Enter visual mode (selection mode)" },
@@ -265,8 +265,8 @@ keymap = [
 	{ on = "a", run = "insert --append",                     desc = "Enter append mode" },
 	{ on = "H", run = [ "move -999", "insert" ],             desc = "Move to the BOL, and enter insert mode" },
 	{ on = "A", run = [ "move 999", "insert --append" ],     desc = "Move to the EOL, and enter append mode" },
-	{ on = "v", run = "visual",                              desc = "Enter visual mode" },
-	{ on = "V", run = [ "move -999", "visual", "move 999" ], desc = "Enter visual mode and select all" },
+	# { on = "v", run = "visual",                              desc = "Enter visual mode" },
+	# { on = "V", run = [ "move -999", "visual", "move 999" ], desc = "Enter visual mode and select all" },
 
 	# Character-wise movement
 	{ on = "j",       run = "move -1", desc = "Move back a character" },
