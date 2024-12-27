@@ -183,6 +183,8 @@ keymap = [
   # custom shell command
 	{ on = "e", run = '''shell --block 'ext "$0"'''', desc = "Extract zip files" },
 	{ on = "S", run = 'shell "$SHELL" --block', desc = "Drop to the shell" },
+
+  # TODO: find a better to print the outputs
 	{ on = ["s", "w"], run = '''shell --block 'exiftool "$0" | sed -n "/Image Size/p"; read _'''', desc = "Extract zip files" },
 	{ on = ["s", "d"], run = '''shell --block 'du --max-depth=0 -h "$0"; read _'''', desc = "Extract zip files" },
 ]
