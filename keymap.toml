@@ -182,7 +182,7 @@ keymap = [
 
   # custom shell command
 	{ on = "e", run = '''shell --block 'ext "$0"'''', desc = "Extract zip files" },
-	{ on = "X", run = 'shell "$SHELL" --block', desc = "Drop to the shell" },
+	{ on = "S", run = 'shell "$SHELL" --block', desc = "Drop to the shell" },
 ]
 
 [tasks]
