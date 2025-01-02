@@ -1,6 +1,8 @@
 --- @sync entry
 
-local function setup(self, opts) self.open_multi = opts.open_multi end
+local function setup(self, opts)
+	self.open_multi = opts.open_multi
+end
 
 local function entry(self)
 	local h = cx.active.current.hovered
