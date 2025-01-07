@@ -65,7 +65,8 @@ keymap = [
   # TODO: smarter oper
 	# { on = "o",         run = "open",                        desc = "Open selected files" },
 	{ on = "r",         run = "open --interactive",          desc = "Open selected files interactively" },
-	# { on = "<Enter>",   run = "open",                        desc = "Open selected files" },
+  # keep this so yazi.nvim could work properly
+	{ on = "<Enter>",   run = "open",                        desc = "Open selected files" },
 	# { on = "<S-Enter>", run = "open --interactive",          desc = "Open selected files interactively" },
 
 	{ on = ["y", "y"],  run = "yank",                        desc = "Yank selected files (copy)" },
