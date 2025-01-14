@@ -186,8 +186,8 @@ keymap = [
 	{ on = "S", run = 'shell "$SHELL" --block', desc = "Drop to the shell" },
 
   # TODO: find a better to print the outputs
-	{ on = ["s", "w"], run = '''shell --block 'exiftool "$0" | sed -n "/Image Size/p"; read _'''', desc = "Show image media info" },
-	{ on = ["s", "d"], run = '''shell --block 'du --max-depth=0 -h "$0"; read _'''', desc = "Show the total size of file/folder" },
+	# { on = ["s", "w"], run = '''shell --block 'exiftool "$0" | sed -n "/Image Size/p"; read _'''', desc = "Show image media info" },
+	# { on = ["s", "d"], run = '''shell --block 'du --max-depth=0 -h "$0"; read _'''', desc = "Show the total size of file/folder" },
 	{ on = ["Z"], run = '''shell 'zip -r .zip "$@"' --cursor=7 --interactive --block''', desc = "Zip the selected files" },  # TODO: fix this
 	{ on = ["["], run = "plugin parent-arrow --args=-1", desc = "Navigating the parent directory up." },
 	{ on = ["]"], run = "plugin parent-arrow --args=1", desc = "Navigating the parent directory down." },
