@@ -45,14 +45,17 @@ extract = [
 	{ run = 'ya pub extract --list %*',   desc = "Extract here", for = "windows" },
 ]
 play = [
-	{ run = 'mpv --force-window "$@"', orphan = true, for = "unix" },
+	{ run = 'mpv --force-window "$@"', orphan = false, for = "unix" },
 	{ run = '''mediainfo "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show media info", for = "unix" },
 ]
 sxiv = [
-	{ run = 'rotdir "$@" | grep -i "\.\(png\|jpg\|jpeg\|gif\|webp\|tif\|ico\)\(_large\)*$" | sxiv -aio', orphan = true, desc = "sxiv", for = "unix" },
+	{ run = 'rotdir "$@" | grep -i "\.\(png\|jpg\|jpeg\|gif\|webp\|tif\|ico\)\(_large\)*$" | sxiv -aio', orphan = false, desc = "sxiv", for = "unix" },
 ]
 zathura = [
-	{ run = 'zathura "$@"', orphan = true, desc = "zathura", for = "unix" },
+	{ run = 'zathura "$@"', orphan = false, desc = "zathura", for = "unix" },
+]
+netron = [
+	{ run = 'netron "$@"', orphan = false, block=true, desc = "netron", for = "unix" },
 ]
 
 [open]
@@ -74,6 +77,7 @@ rules = [
 	{ mime = "application/pdf", use = [ "zathura", "reveal" ] },
 	# Empty file
 	{ mime = "inode/empty", use = [ "edit", "reveal" ] },
+  { name = "*.onnx", use = "netron" },
 	# Fallback
 	{ name = "*", use = [ "open", "reveal" ] },
 ]
