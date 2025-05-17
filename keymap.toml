@@ -114,6 +114,7 @@ keymap = [
 	{ on = [ "y", "d" ], run = "copy dirname",          desc = "Copy the directory path" },
 	{ on = [ "y", "f" ], run = "copy filename",         desc = "Copy the filename" },
 	{ on = [ "y", "n" ], run = "copy name_without_ext", desc = "Copy the filename without extension" },
+  { on = [ "y", "r" ], run = '''shell --block -- echo -n $(realpath --relative-to=$(git rev-parse --show-toplevel 2>/dev/null) $@) | xclip -selection clipboard''', desc = "Copy relative path"},  
 
 	# Filter
 	{ on = "f", run = "filter --smart", desc = "Filter files" },
