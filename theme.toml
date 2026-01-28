@@ -1,4 +1,4 @@
-[manager]
+[mgr]
 marker_copied   = { fg = "#98bb6c", bg = "#98bb6c" } # green
 marker_cut      = { fg = "#e46876", bg = "#e46876" } # red
 marker_marked   = { fg = "#957fb8", bg = "#957fb8" } # magenta
