@@ -1,6 +1,4 @@
-# A TOML linter such as https://taplo.tamasfe.dev/ can use this schema to validate your config.
-# If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
-"$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
+#:schema https://yazi-rs.github.io/schemas/yazi.json
 
 [mgr]
 ratio          = [ 2, 4, 5 ]
@@ -14,7 +12,6 @@ show_hidden    = false
 show_symlink   = true
 scrolloff      = 5
 mouse_events   = [ "click", "scroll" ]
-title_format   = "Yazi: {cwd}"
 
 [preview]
 wrap            = "no"
@@ -25,37 +22,35 @@ cache_dir       = ""
 image_delay     = 30
 image_filter    = "triangle"
 image_quality   = 75
-sixel_fraction  = 15
 ueberzug_scale  = 1
 ueberzug_offset = [ 0, 0, 0, 0 ]
 
 [opener]
 edit = [
-	{ run = '${EDITOR:-vi} "$@"', desc = "$EDITOR", block = true, for = "unix" },
+	{ run = '${EDITOR:-vi} %s', desc = "$EDITOR", block = true, for = "unix" },
 ]
 open = [
-	{ run = 'xdg-open "$1"',                desc = "Open", for = "linux" },
+	{ run = 'xdg-open %s1',                desc = "Open", for = "linux" },
 ]
 reveal = [
-	{ run = 'xdg-open "$(dirname "$1")"',           desc = "Reveal", for = "linux" },
-	{ run = '''exiftool "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show EXIF", for = "unix" },
+	{ run = 'xdg-open %d1',           desc = "Reveal", for = "linux" },
+	{ run = '''exiftool %s1; echo "Press enter to exit"; read _''', block = true, desc = "Show EXIF", for = "unix" },
 ]
 extract = [
-	{ run = 'ya pub extract --list "$@"', desc = "Extract here", for = "unix" },
-	{ run = 'ya pub extract --list %*',   desc = "Extract here", for = "windows" },
+	{ run = 'ya pub extract --list %s', desc = "Extract here" },
 ]
 play = [
-	{ run = 'mpv --force-window "$@"', orphan = false, for = "unix" },
-	{ run = '''mediainfo "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show media info", for = "unix" },
+	{ run = 'mpv --force-window %s', orphan = false, for = "unix" },
+	{ run = '''mediainfo %s1; echo "Press enter to exit"; read _''', block = true, desc = "Show media info", for = "unix" },
 ]
 sxiv = [
-	{ run = 'rotdir "$@" | grep -i "\.\(png\|jpg\|jpeg\|gif\|webp\|tif\|ico\)\(_large\)*$" | sxiv -aio', orphan = false, desc = "sxiv", for = "unix" },
+	{ run = 'rotdir %s | grep -i "\.\(png\|jpg\|jpeg\|gif\|webp\|tif\|ico\)\(_large\)*$" | sxiv -aio', orphan = false, desc = "sxiv", for = "unix" },
 ]
 zathura = [
-	{ run = 'zathura "$@"', orphan = false, desc = "zathura", for = "unix" },
+	{ run = 'zathura %s', orphan = false, desc = "zathura", for = "unix" },
 ]
 netron = [
-	{ run = 'netron "$@"', orphan = false, block=true, desc = "netron", for = "unix" },
+	{ run = 'netron %s', orphan = false, block=true, desc = "netron", for = "unix" },
 ]
 
 [open]
@@ -83,8 +78,11 @@ rules = [
 ]
 
 [tasks]
-micro_workers    = 10
-macro_workers    = 10
+file_workers     = 10
+plugin_workers   = 10
+fetch_workers    = 10
+preload_workers  = 10
+process_workers  = 10
 bizarre_retry    = 3
 image_alloc      = 536870912  # 512MB
 image_bound      = [ 0, 0 ]
@@ -94,9 +92,9 @@ suppress_preload = false
 
 fetchers = [
 	# Mimetype
-	{ id = "mime", url = "*/",         run = "mime.dir", prio = "high" },
-	{ id = "mime", url = "local://*",  run = "mime.local", prio = "high" },
-	{ id = "mime", url = "remote://*", run = "mime.remote", prio = "high" },
+	{ url = "*/",         run = "mime.dir", prio = "high", group = "mime" },
+	{ url = "local://*",  run = "mime.local", prio = "high", group = "mime" },
+	{ url = "remote://*", run = "mime.remote", prio = "high", group = "mime" },
 ]
 spotters = [
 	{ url = "*/", run = "folder" },
@@ -206,13 +204,13 @@ delete_offset	= [ 0, 0, 70, 20 ]
 
 # overwrite
 overwrite_title   = "Overwrite file?"
-overwrite_content = "Will overwrite the following file:"
+overwrite_body    = "Will overwrite the following file:"
 overwrite_origin  = "center"
 overwrite_offset  = [ 0, 0, 50, 15 ]
 
 # quit
 quit_title   = "Quit?"
-quit_content = "The following task is still running, are you sure you want to quit?"
+quit_body    = "The following task is still running, are you sure you want to quit?"
 quit_origin  = "center"
 quit_offset  = [ 0, 0, 50, 15 ]
 

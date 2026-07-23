@@ -1,3 +1,5 @@
+#:schema https://yazi-rs.github.io/schemas/theme.json
+
 [mgr]
 marker_copied   = { fg = "#98bb6c", bg = "#98bb6c" } # green
 marker_cut      = { fg = "#e46876", bg = "#e46876" } # red
@@ -5,12 +7,6 @@ marker_marked   = { fg = "#957fb8", bg = "#957fb8" } # magenta
 marker_selected = { fg = "#ffa066", bg = "#ffa066" } # cyan
 
 cwd = { fg = "#e6c384" } # yellow
-hovered = { reversed = true }
-preview_hovered = { reversed = true }
-
-tab_active   = { reversed = true }
-tab_inactive = {}
-tab_width    = 1
 
 # default bg
 count_copied   = { fg = "#1f1f28", bg = "#98bb6c" } # green
@@ -20,16 +16,19 @@ count_selected = { fg = "#1f1f28", bg = "#e6c384" } # yellow
 border_symbol = "│"
 border_style = { fg = "#dcd7ba"} # white
 
+# hovered file indicator
+[indicator]
+current = { reversed = true }
+preview = { reversed = true }
+
+[tabs]
+active   = { reversed = true }
+inactive = {}
+
 # status-line
 [status]
-separator_open = ""
-separator_close = ""
-separator_style = { fg = "reset", bg = "#363646" } # light bg
-
-# default bg
-mode_normal = { fg = "#1f1f28", bg = "#85a6ea", bold = true } # blue
-mode_select = { fg = "#1f1f28", bg = "#957fb8", bold = true } # magenta
-mode_unset  = { fg = "#1f1f28", bg = "#e6c384", bold = true } # yellow
+sep_left  = { open = "", close = "" }
+sep_right = { open = "", close = "" }
 
 # blue - light bg
 progress_label  = { fg = "#85a6ea", bg = "#363646", bold = true }
@@ -37,13 +36,18 @@ progress_label  = { fg = "#85a6ea", bg = "#363646", bold = true }
 progress_normal = { fg = "#363646", bg = "#1f1f28" }
 progress_error  = { fg = "#363646", bg = "#1f1f28" }
 
-permissions_t = { fg = "#98bb6c" } # green
-permissions_r = { fg = "#e6c384" } # yellow
-permissions_w = { fg = "#e82424" } # red
-permissions_x = { fg = "#7aa89f" } # cyan
-permissions_s = { fg = "#938aa9" } # magenta
+perm_type  = { fg = "#98bb6c" } # green
+perm_read  = { fg = "#e6c384" } # yellow
+perm_write = { fg = "#e82424" } # red
+perm_exec  = { fg = "#7aa89f" } # cyan
 
-[select]
+# default bg
+[mode]
+normal_main = { fg = "#1f1f28", bg = "#85a6ea", bold = true } # blue
+select_main = { fg = "#1f1f28", bg = "#957fb8", bold = true } # magenta
+unset_main  = { fg = "#1f1f28", bg = "#e6c384", bold = true } # yellow
+
+[pick]
 border   = { fg = "#7fb4ca" } # blue
 active   = { fg = "#938aa9", bold = true } # magenta
 inactive = {}
@@ -93,9 +97,9 @@ rules = [
     { mime = "application/{,g}zip", fg = "#e46876" },
     { mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#e46876" },
     { mime = "application/{pdf,doc,rtf,vnd.*}", fg = "#6a9589" },
-    { name = "*", is = "orphan", fg = "#e46876" },
-    { name = "*", is = "exec", fg = "#957fb8" },
-    { name = "*/", fg = "#85a6ea"}
+    { url = "*", is = "orphan", fg = "#e46876" },
+    { url = "*", is = "exec", fg = "#957fb8" },
+    { url = "*/", fg = "#85a6ea"}
 ]
 
 
@@ -199,14 +203,14 @@ exts = []
 
 conds = [
 	# Special files
-	# { if = "orphan", text = "" },
-	# { if = "link", text = "" },
-	# { if = "block", text = "" },
-	# { if = "char", text = "" },
-	# { if = "fifo", text = "" },
-	# { if = "sock", text = "" },
-	# { if = "sticky", text = "" },
-	# { if = "dummy", text = "" },
+	# { if = "orphan", text = "" },
+	# { if = "link", text = "" },
+	# { if = "block", text = "" },
+	# { if = "char", text = "" },
+	# { if = "fifo", text = "" },
+	# { if = "sock", text = "" },
+	# { if = "sticky", text = "" },
+	# { if = "dummy", text = "" },
 
 	{ if = "link", text = "⛓" },
 
