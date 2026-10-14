@@ -44,7 +44,7 @@ play = [
 	{ run = '''mediainfo %s1; echo "Press enter to exit"; read _''', block = true, desc = "Show media info", for = "unix" },
 ]
 sxiv = [
-	{ run = 'rotdir %s | grep -i "\.\(png\|jpg\|jpeg\|gif\|webp\|tif\|ico\)\(_large\)*$" | sxiv -aio', orphan = false, desc = "sxiv", for = "unix" },
+	{ run = 'rotdir %s | grep -i "\.\(png\|jpg\|jpeg\|gif\|webp\|svg\|tif\|ico\)\(_large\)*$" | sxiv -aio', orphan = false, desc = "sxiv", for = "unix" },
 ]
 zathura = [
 	{ run = 'zathura %s', orphan = false, desc = "zathura", for = "unix" },
